@@ -1,6 +1,9 @@
 <?php
 
 namespace Router;
+
+use Exception;
+
 require_once("Route.php");
 
 class Router
@@ -15,22 +18,29 @@ class Router
 	}
 
 	public function route(string $method, string $uri, array $postParams): void {
-		$route = $this->buildRoute($method, $uri, $postParams);
+		try {
+			$route = $this->buildRoute($method, $uri, $postParams);
 
-		require_once(str_replace('\\', '/', $route->getController()) . '.php');
-
-		if (class_exists($route->getController())) {
-			if (in_array($route->getAction(), get_class_methods($route->getController()))) {
-				if (is_null($route->getParams())) {
-					call_user_func([$route->getController(), $route->getAction()]);
+			if (file_exists(str_replace('\\', '/', $route->getController()) . '.php')) {
+				require_once(str_replace('\\', '/', $route->getController()) . '.php');
+				if (class_exists($route->getController())) {
+					if (in_array($route->getAction(), get_class_methods($route->getController()))) {
+						if (is_null($route->getParams())) {
+							call_user_func([$route->getController(), $route->getAction()]);
+						} else {
+							call_user_func_array([$route->getController(), $route->getAction()], [$route->getParams()]);
+						}
+					} else {
+						http_response_code(404);
+					}
 				} else {
-					call_user_func_array([$route->getController(), $route->getAction()], [$route->getParams()]);
+					http_response_code(404);
 				}
 			} else {
 				http_response_code(404);
 			}
-		} else {
-			http_response_code(404);
+		} catch (Exception $exception) {
+			self::redirectToError($exception->getMessage());
 		}
 	}
 
