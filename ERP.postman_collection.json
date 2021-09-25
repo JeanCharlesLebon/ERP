@@ -1,0 +1,905 @@
+{
+	"info": {
+		"_postman_id": "19b68f5c-cf5f-4542-922a-526b68390ffd",
+		"name": "ERP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "company/edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "balance",
+									"value": "1234.567",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "testName",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "France",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "erp.local/company/edit/1",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"company",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "company/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "secondCompany",
+									"type": "text"
+								},
+								{
+									"key": "balance",
+									"value": "2.34",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "secondCountry",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "erp.local/company/add",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"company",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "client/add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "secondname",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "secondAddress",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "US",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/client/add",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"client",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client/get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://erp.local/client",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client/edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "editedName",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "my new address",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "Still France",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/client/edit/1",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"client",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "employeeName3",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "employeeCountry3",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "1987-06-13",
+									"type": "text"
+								},
+								{
+									"key": "firstDayInCompany",
+									"value": "2010-03-26",
+									"type": "text"
+								},
+								{
+									"key": "companyId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "erp.local/employee/add",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"employee",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "editedName",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "editedCountry",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "2000-01-01",
+									"type": "text"
+								},
+								{
+									"key": "firstDayInCompany",
+									"value": "2000-02-02",
+									"type": "text"
+								},
+								{
+									"key": "companyId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "erp.local/employee/edit/1",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"employee",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "product2Name",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "47.53",
+									"type": "text"
+								},
+								{
+									"key": "tax",
+									"value": "2.46",
+									"type": "text"
+								},
+								{
+									"key": "companyId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "erp.local/product/add",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "product1Name",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "125.00",
+									"type": "text"
+								},
+								{
+									"key": "tax",
+									"value": "9.99",
+									"type": "text"
+								},
+								{
+									"key": "companyId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "erp.local/product/edit/1",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"product",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "provider",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "3r",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "3r",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "3r",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/provider/add",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"provider",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "edited1stName",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "edited1stAddress",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "edited1stCountry",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/provider/edit/1",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"provider",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pwd3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/authentication/login",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"authentication",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://erp.local/authentication/logout",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"authentication",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pwd3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/authentication/register",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"authentication",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pwd3",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/user/add",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"user",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "pwd1",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "reader",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/user/edit/1",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"user",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction",
+			"item": [
+				{
+					"name": "add with provider",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "clientId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "companyId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "providerId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "responsibleEmployeeId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productQuantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/transaction/add",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"transaction",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit with provider",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "clientId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "companyId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "providerId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "responsibleEmployeeId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productQuantity",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/transaction/edit/10",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"transaction",
+								"edit",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add with client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "clientId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "companyId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "providerId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "productId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "responsibleEmployeeId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productQuantity",
+									"value": "15",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/transaction/add",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"transaction",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit with client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "clientId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "companyId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "providerId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "productId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "responsibleEmployeeId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productQuantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://erp.local/transaction/edit/12",
+							"protocol": "http",
+							"host": [
+								"erp",
+								"local"
+							],
+							"path": [
+								"transaction",
+								"edit",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
